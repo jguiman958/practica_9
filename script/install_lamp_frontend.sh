@@ -2,7 +2,7 @@
 
 # Muestra todos los comandos que se han ejeutado.
 
-set -x
+set -ex
 
 # Actualización de repositorios
  sudo apt update
@@ -17,14 +17,11 @@ apt install apache2 -y
 # Copiar el archivo de configuracion de apache.
 sudo cp ../conf/000-default.conf /etc/apache2/sites-available/000-default.conf
 
-#instalar mysql server
-sudo apt install mysql-server -y
-
 #Instalar php
 sudo apt install php libapache2-mod-php php-mysql -y
 
 # Copiar el archivo de configuracion de apache.
-# sudo cp ../conf/000-default.conf /etc/apache2/sites-available/000-default.conf
+sudo cp ../conf/000-default.conf /etc/apache2/sites-available/000-default.conf
 
 #Reiniciamos el servicio apache
 sudo systemctl restart apache2
