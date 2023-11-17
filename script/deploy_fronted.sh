@@ -76,6 +76,8 @@ wp rewrite structure '/%postname%/' \
   --path=/var/www/html \
   --allow-root
   
+# Modificamos automaticamente el archivo de conexión al panel de wrodpress
+  
 #PENDIENTE
 # Cambiamos al propietario de /var/www/html como www-data
 chown -R www-data:www-data /var/www/html
