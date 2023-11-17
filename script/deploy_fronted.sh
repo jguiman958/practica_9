@@ -31,18 +31,12 @@ rm -rf /var/www/html/*
 #Descargarmos el codigo fuente de wordpress en /var/www/html
 wp core download --path=/var/www/html --locale=es_ES --allow-root
 
-# Creamos la base de la bbase de datos y el usuario de la base de datos.
-mysql -u root <<< "DROP DATABASE IF EXISTS $WORDPRESS_DB_NAME"
-mysql -u root <<< "CREATE DATABASE $WORDPRESS_DB_NAME"
-mysql -u root <<< "DROP USER IF EXISTS $WORDPRESS_DB_USER@$IP_CLIENTE_MYSQL"
-mysql -u root <<< "CREATE USER $WORDPRESS_DB_USER@$IP_CLIENTE_MYSQL IDENTIFIED BY '$WORDPRESS_DB_PASSWORD'"
-mysql -u root <<< "GRANT ALL PRIVILEGES ON $WORDPRESS_DB_NAME.* TO $WORDPRESS_DB_USER@$IP_CLIENTE_MYSQL"
-
 # Creación del archivo wp-config 
 wp config create \
   --dbname=$WORDPRESS_DB_NAME \
   --dbuser=$WORDPRESS_DB_USER \
   --dbpass=$WORDPRESS_DB_PASSWORD \
+  --dbhost=$WORDPRESS_DB_HOST \
   --path=/var/www/html \
   --allow-root
 
