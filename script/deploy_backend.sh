@@ -4,12 +4,6 @@
 
 set -ex
 
-# Actualización de repositorios
- sudo apt update
-
-# Actualización de paquetes
-# sudo apt upgrade  
-
 # Incluimos las variables del archivo .env.
 source .env
 
