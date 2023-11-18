@@ -36,7 +36,6 @@ wp config create \
   --dbname=$WORDPRESS_DB_NAME \
   --dbuser=$WORDPRESS_DB_USER \
   --dbpass=$WORDPRESS_DB_PASSWORD \
-  --dbhost=$WORDPRESS_DB_HOST \
   --path=/var/www/html \
   --allow-root
 
@@ -70,9 +69,8 @@ wp rewrite structure '/%postname%/' \
   --path=/var/www/html \
   --allow-root
   
-# Modificamos automaticamente el archivo de conexión al panel de wrodpress
-  
-#PENDIENTE
+# Modificamos automaticamente el archivo de conexión al panel de wordpress
+
 # Cambiamos al propietario de /var/www/html como www-data
 chown -R www-data:www-data /var/www/html
 
