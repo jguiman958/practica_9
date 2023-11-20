@@ -40,7 +40,6 @@ wp config create \
   --allow-root
 
 # Instalar wordpress.
-
 wp core install \
   --url=$CERTIFICATE_DOMAIN \
   --title="$wordpress_title" \
