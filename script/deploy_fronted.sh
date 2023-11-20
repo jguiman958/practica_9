@@ -69,7 +69,8 @@ wp rewrite structure '/%postname%/' \
   --path=/var/www/html \
   --allow-root
   
-# Modificamos automaticamente el archivo de conexión al panel de wordpress
+# Modificamos automaticamente el nombre que establece por defecto el plugin wpd-hide-login
+wp option update whl_page $WORDPRESS_HIDE_LOGIN --path=/var/www/html --allow-root
 
 # Cambiamos al propietario de /var/www/html como www-data
 chown -R www-data:www-data /var/www/html
