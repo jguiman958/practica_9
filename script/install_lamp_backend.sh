@@ -10,7 +10,7 @@ set -ex
 # Actualización de paquetes
 # sudo apt upgrade  
 
-# iMPORTAMOS EL ARCHIVO .ENV
+# IMPORTAMOS EL ARCHIVO .ENV
 source .env
 
 #instalar mysql server

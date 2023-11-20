@@ -66,11 +66,12 @@ wp plugin install bbpress --activate --path=/var/www/html --allow-root
 wp plugin install wps-hide-login --activate --path=/var/www/html --allow-root
 
 # Habilitar permalinks
-wp rewrite structure '/%postname%/' \
+ wp rewrite structure '/%postname%/' \
   --path=/var/www/html \
   --allow-root
-  
-#PENDIENTE
+
+# Hbailitamos la modalidad de reescritura.
+a2enmod rewrite
+
 # Cambiamos al propietario de /var/www/html como www-data
 chown -R www-data:www-data /var/www/html
-
