@@ -36,6 +36,7 @@ wp config create \
   --dbname=$WORDPRESS_DB_NAME \
   --dbuser=$WORDPRESS_DB_USER \
   --dbpass=$WORDPRESS_DB_PASSWORD \
+  --dbhost=$WORDPRESS_DB_HOST\
   --path=/var/www/html \
   --allow-root
 
@@ -71,8 +72,9 @@ wp plugin install wps-hide-login --activate --path=/var/www/html --allow-root
 # Modificamos automaticamente el nombre que establece por defecto el plugin wpd-hide-login
 wp option update whl_page $WORDPRESS_HIDE_LOGIN --path=/var/www/html --allow-root
 
+cp ../conf/.htaccess /var/www/html
 
-# Hbailitamos la modalidad de reescritura.
+# Habilitamos la modalidad de reescritura.
 a2enmod rewrite
 
 # Cambiamos al propietario de /var/www/html como www-data
