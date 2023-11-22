@@ -71,13 +71,10 @@ wp plugin install wps-hide-login --activate --path=/var/www/html --allow-root
   
 # Modificamos automaticamente el nombre que establece por defecto el plugin wpd-hide-login
 wp option update whl_page $WORDPRESS_HIDE_LOGIN --path=/var/www/html --allow-root
-<<<<<<< HEAD
-=======
 
 
 # Hbailitamos la modalidad de reescritura.
 a2enmod rewrite
->>>>>>> c6159a1ab803d2daa6ef32e0bdde748daa5a1f1c
 
 # Cambiamos al propietario de /var/www/html como www-data
 chown -R www-data:www-data /var/www/html
